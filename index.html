@@ -118,6 +118,27 @@
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2) translateY(-14px); }
     }
 
+    /* Interactive Hover Glowing Letters */
+    .glow-letter {
+      display: inline-block;
+      transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.2s ease, transform 0.2s ease;
+      will-change: transform, text-shadow;
+    }
+    .glow-letter:hover {
+      color: #38bdf8 !important;
+      transform: translateY(-3px) scale(1.12);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.95), 0 0 25px rgba(99, 102, 241, 0.85), 0 0 35px rgba(52, 211, 153, 0.75);
+    }
+
+    /* Global Text Hover Glow */
+    .hover-glow-text {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .hover-glow-text:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 12px rgba(129, 140, 248, 0.9), 0 0 24px rgba(52, 211, 153, 0.75);
+    }
+
     /* 7. Magnetic Hover Micro-Interaction for Buttons */
     .magnetic-btn {
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
@@ -276,9 +297,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <!-- Left Headline & Bio (2. Text Reveal) -->
           <div class="lg:col-span-8">
-            <!-- 1. ✨ Name Sparkles -->
+            <!-- 1. ✨ Name Sparkles & Glowing Letters -->
             <h1 class="animate-text-reveal-1 text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight whitespace-nowrap inline-flex items-center gap-1.5">
-              <span>Hi, I'm <span class="text-indigo-400">Vennela Bandari.</span></span>
+              <span>Hi, I'm <span class="text-indigo-400 glow-target">Vennela Bandari.</span></span>
               <span class="text-amber-300 text-lg animate-bounce shrink-0" title="Data & AI Insights">✨</span>
             </h1>
 
@@ -1094,6 +1115,26 @@
       animate();
     }
     initDataFlowCanvas();
+
+    // Interactive Letter-by-Letter Glow on Hover
+    function initGlowingLetters() {
+      const targets = document.querySelectorAll('.glow-target');
+      targets.forEach(el => {
+        const text = el.textContent;
+        el.innerHTML = '';
+        [...text].forEach(char => {
+          if (char === ' ') {
+            el.appendChild(document.createTextNode(' '));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'glow-letter';
+            span.textContent = char;
+            el.appendChild(span);
+          }
+        });
+      });
+    }
+    initGlowingLetters();
 
     // 7. Magnetic Hover Micro-Interaction for Primary Buttons
     function initMagneticButtons() {
