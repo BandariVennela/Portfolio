@@ -235,10 +235,20 @@
       <canvas id="hero-data-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-30 z-0"></canvas>
 
       <div class="relative z-10">
-        <!-- Status Badge -->
-        <div class="animate-text-reveal-1 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Available Immediately • Open for Data Analyst & AI Engineering Roles
+        <!-- Visual Concept Badge: DATA ✦ → INSIGHT ✦ → IMPACT ✦ -->
+        <div class="animate-text-reveal-1 flex flex-wrap items-center gap-3 mb-6">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono tracking-widest text-slate-300 shadow-xl">
+            <span class="text-indigo-400 font-extrabold flex items-center gap-1">DATA <span class="text-white text-xs animate-pulse">✦</span></span>
+            <span class="text-slate-600">→</span>
+            <span class="text-emerald-400 font-extrabold flex items-center gap-1">INSIGHT <span class="text-emerald-300 text-xs animate-pulse">✦</span></span>
+            <span class="text-slate-600">→</span>
+            <span class="text-sky-400 font-extrabold flex items-center gap-1">IMPACT <span class="text-sky-300 text-xs animate-pulse">✦</span></span>
+          </div>
+
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available Immediately • Open for Roles
+          </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -919,9 +929,33 @@
         alpha: Math.random() * 0.6 + 0.2
       }));
 
+      // Subtle White Sparkles (Insight Sparks Appearing)
+      const sparkles = Array.from({ length: 14 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 3.5 + 2,
+        alpha: Math.random() * 0.4,
+        speed: Math.random() * 0.012 + 0.004,
+        growing: Math.random() > 0.5
+      }));
+
+      function drawStarSparkle(ctx, x, y, radius, alpha) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.moveTo(x, y - radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.quadraticCurveTo(x, y, x, y + radius);
+        ctx.quadraticCurveTo(x, y, x - radius, y);
+        ctx.quadraticCurveTo(x, y, x, y - radius);
+        ctx.fill();
+        ctx.restore();
+      }
+
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        // Render Data Nodes & Stream Lines
         for (let i = 0; i < nodes.length; i++) {
           const n = nodes[i];
           n.x += n.vx;
@@ -964,6 +998,24 @@
             }
           }
         }
+
+        // Render Twinkling White Star Sparkles (Insights Appearing)
+        for (let s = 0; s < sparkles.length; s++) {
+          const sp = sparkles[s];
+          if (sp.growing) {
+            sp.alpha += sp.speed;
+            if (sp.alpha >= 0.7) sp.growing = false;
+          } else {
+            sp.alpha -= sp.speed;
+            if (sp.alpha <= 0.05) {
+              sp.growing = true;
+              sp.x = Math.random() * canvas.width;
+              sp.y = Math.random() * canvas.height;
+            }
+          }
+          drawStarSparkle(ctx, sp.x, sp.y, sp.size, sp.alpha);
+        }
+
         requestAnimationFrame(animate);
       }
       animate();
