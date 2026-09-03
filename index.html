@@ -124,6 +124,15 @@
       transform: translateY(0);
     }
 
+    /* Modal Scale-In Animation */
+    .modal-content-animated {
+      animation: modalScaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalScaleIn {
+      from { opacity: 0; transform: scale(0.94) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
     /* Navigation Animated Underline */
     .nav-indicator {
       position: relative;
@@ -161,6 +170,11 @@
     </div>
     <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
   </div>
+
+  <!-- Scroll-To-Top Button -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 left-6 z-40 p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-indigo-500/50 shadow-xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
 
   <!-- Navigation Header with Animated Underline Indicators -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80" id="main-header">
@@ -215,7 +229,7 @@
   </header>
 
   <main class="pt-24 relative z-10">
-    <!-- Hero / Recruiter Headline Section with 1. Data Flow Canvas & 2. Text Reveal -->
+    <!-- Hero / Recruiter Headline Section with 1. Interactive Data Flow Canvas & 2. Text Reveal -->
     <section id="summary" class="max-w-6xl mx-auto px-6 py-12 md:py-20 relative">
       <!-- 1. Interactive Data Flow Background Canvas -->
       <canvas id="hero-data-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-30 z-0"></canvas>
@@ -317,10 +331,10 @@
     <section id="skills" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/80 reveal-on-scroll">
       <div class="mb-8">
         <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">Candidate Competencies</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Technical Stack & Proficiency Bars</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Technical Stack & Live Proficiency Bars</h2>
       </div>
 
-      <!-- Animated Skill Progress Bars -->
+      <!-- Animated Skill Progress Bars with Live Count-Up Values -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
           <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
@@ -331,7 +345,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">MySQL / Relational SQL Queries</span>
-              <span class="text-indigo-400 font-mono">92%</span>
+              <span class="text-indigo-400 font-mono skill-val" data-target="92">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full" data-width="92%"></div>
@@ -342,7 +356,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">Python (Pandas, NumPy, Matplotlib)</span>
-              <span class="text-indigo-400 font-mono">88%</span>
+              <span class="text-indigo-400 font-mono skill-val" data-target="88">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full" data-width="88%"></div>
@@ -353,7 +367,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">Power BI (DAX & Interactive Dashboards)</span>
-              <span class="text-indigo-400 font-mono">90%</span>
+              <span class="text-indigo-400 font-mono skill-val" data-target="90">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-emerald-400 rounded-full" data-width="90%"></div>
@@ -370,7 +384,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">Advanced Excel (Pivot Tables & Formulas)</span>
-              <span class="text-emerald-400 font-mono">86%</span>
+              <span class="text-emerald-400 font-mono skill-val" data-target="86">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full" data-width="86%"></div>
@@ -381,7 +395,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">LLM Integration & Prompt Engineering</span>
-              <span class="text-emerald-400 font-mono">90%</span>
+              <span class="text-emerald-400 font-mono skill-val" data-target="90">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-sky-400 rounded-full" data-width="90%"></div>
@@ -392,7 +406,7 @@
           <div class="space-y-1.5">
             <div class="flex justify-between text-xs font-medium">
               <span class="text-slate-200">Tableau & Executive Reporting</span>
-              <span class="text-emerald-400 font-mono">82%</span>
+              <span class="text-emerald-400 font-mono skill-val" data-target="82">0%</span>
             </div>
             <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
               <div class="skill-bar-fill h-full bg-gradient-to-r from-emerald-500 to-indigo-400 rounded-full" data-width="82%"></div>
@@ -743,7 +757,7 @@
 
   <!-- Interactive Project Analytics Case Study Modal -->
   <div id="chart-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl modal-content-animated">
       <button onclick="closeChartModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -814,7 +828,7 @@
 
   <!-- Recruiter Executive Briefing Modal -->
   <div id="recruiter-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative shadow-2xl">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative shadow-2xl modal-content-animated">
       <button onclick="toggleRecruiterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -876,11 +890,18 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // 1. Data Flow Canvas Background Animation for Hero Section
+    // 1. Interactive Data Flow Canvas Background Animation for Hero Section
     function initDataFlowCanvas() {
       const canvas = document.getElementById('hero-data-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
+
+      let mouse = { x: null, y: null, radius: 120 };
+      window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
 
       function resizeCanvas() {
         canvas.width = canvas.parentElement.offsetWidth;
@@ -889,11 +910,11 @@
       resizeCanvas();
       window.addEventListener('resize', resizeCanvas);
 
-      const nodes = Array.from({ length: 28 }, () => ({
+      const nodes = Array.from({ length: 32 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.4,
-        vy: Math.random() * 0.5 + 0.2, // Slow data flow downward
+        vy: Math.random() * 0.5 + 0.2, // Slow data stream downward
         size: Math.random() * 2.2 + 1.2,
         alpha: Math.random() * 0.6 + 0.2
       }));
@@ -910,21 +931,34 @@
           if (n.x < 0) n.x = canvas.width;
           if (n.x > canvas.width) n.x = 0;
 
+          // Mouse Repulsion Effect
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = n.x - mouse.x;
+            const dy = n.y - mouse.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < mouse.radius) {
+              const angle = Math.atan2(dy, dx);
+              const force = (mouse.radius - dist) / mouse.radius;
+              n.x += Math.cos(angle) * force * 1.5;
+              n.y += Math.sin(angle) * force * 1.5;
+            }
+          }
+
           // Draw Data Node
           ctx.beginPath();
           ctx.arc(n.x, n.y, n.size, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(99, 102, 241, ${n.alpha})`;
           ctx.fill();
 
-          // Connect nearby nodes with subtle data flow lines
+          // Connect nearby nodes with data lines
           for (let j = i + 1; j < nodes.length; j++) {
             const n2 = nodes[j];
             const dist = Math.hypot(n.x - n2.x, n.y - n2.y);
-            if (dist < 100) {
+            if (dist < 105) {
               ctx.beginPath();
               ctx.moveTo(n.x, n.y);
               ctx.lineTo(n2.x, n2.y);
-              ctx.strokeStyle = `rgba(99, 102, 241, ${0.12 * (1 - dist / 100)})`;
+              ctx.strokeStyle = `rgba(99, 102, 241, ${0.14 * (1 - dist / 105)})`;
               ctx.lineWidth = 0.8;
               ctx.stroke();
             }
@@ -961,6 +995,18 @@
         cursorGlow.style.top = `${e.clientY}px`;
       });
     }
+
+    // Scroll-to-top Floating Button Visibility & Action
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    });
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1052,7 +1098,7 @@
       }
     }
 
-    // Skill Bar Growing Animation on Scroll
+    // Skill Bar Growing Animation & Real-time Live Percentage Count Up
     let skillBarsAnimated = false;
     function animateSkillBars() {
       const skillSection = document.getElementById('skills');
@@ -1061,9 +1107,25 @@
       if (rect.top < window.innerHeight - 100 && !skillBarsAnimated) {
         skillBarsAnimated = true;
         const skillFills = document.querySelectorAll('.skill-bar-fill');
+        const skillVals = document.querySelectorAll('.skill-val');
+
         skillFills.forEach(fill => {
           const width = fill.getAttribute('data-width');
           fill.style.width = width;
+        });
+
+        skillVals.forEach(val => {
+          const target = parseInt(val.getAttribute('data-target'));
+          let count = 0;
+          const timer = setInterval(() => {
+            count += 2;
+            if (count >= target) {
+              val.innerText = target + '%';
+              clearInterval(timer);
+            } else {
+              val.innerText = count + '%';
+            }
+          }, 25);
         });
       }
     }
