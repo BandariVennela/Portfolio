@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vennela Bandari | Data Analyst & AI Developer Portfolio</title>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Vennela Bandari, Data Analyst & AI Full Stack Developer specializing in Python, Power BI, SQL, and LLM integrations.">
+  <title>Vennela Bandari | Data Analyst & AI Full Stack Developer Portfolio</title>
+  
+  <!-- SEO & Recruiter Meta Tags -->
+  <meta name="description" content="Executive portfolio of Vennela Bandari, Data Analyst & AI Full Stack Developer specializing in Python, SQL, Power BI, Tableau, and LLM Prompt Engineering.">
   <meta name="author" content="Vennela Bandari">
-  <meta property="og:title" content="Vennela Bandari | Data Analyst & AI Developer Portfolio">
-  <meta property="og:description" content="Transforming Data into Actionable Intelligence & AI Solutions. Explore projects, dashboards, and technical capabilities.">
+  <meta property="og:title" content="Vennela Bandari | Data Analyst & AI Full Stack Developer">
+  <meta property="og:description" content="Data Analyst & AI Developer portfolio featuring HR Attrition Dashboards, AI Platforms, and automated data pipelines.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Chart.js for interactive analytics previews -->
+  
+  <!-- Chart.js for Recruiter Case Studies -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
@@ -36,20 +40,6 @@
               600: '#4f46e5',
               700: '#4338ca',
             }
-          },
-          animation: {
-            'pulse-glow': 'pulseGlow 4s infinite ease-in-out',
-            'float': 'float 6s infinite ease-in-out',
-          },
-          keyframes: {
-            pulseGlow: {
-              '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
-              '50%': { opacity: 0.6, transform: 'scale(1.08)' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
-            }
           }
         }
       }
@@ -57,25 +47,14 @@
   </script>
 
   <style>
-    /* Glassmorphism & Accent Glows */
-    .glass-card {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Custom High-Contrast & Sleek Styling */
+    .recruiter-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
     }
-    .glass-card:hover {
-      border-color: rgba(99, 102, 241, 0.3);
-      box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.15);
+    .recruiter-card:hover {
+      border-color: #4f46e5;
     }
-    .glow-bg {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -91,435 +70,418 @@
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden">
-
-  <!-- Ambient Glow Orbs -->
-  <div class="glow-bg w-96 h-96 bg-indigo-600/20 top-0 -left-20 animate-pulse-glow"></div>
-  <div class="glow-bg w-96 h-96 bg-emerald-600/15 top-1/3 -right-20 animate-pulse-glow" style="animation-delay: 2s;"></div>
-  <div class="glow-bg w-96 h-96 bg-sky-600/15 top-2/3 left-1/4 animate-pulse-glow" style="animation-delay: 4s;"></div>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen">
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-in-out bg-slate-900/90 border border-indigo-500/40 backdrop-blur-xl text-white px-5 py-3 rounded-2xl shadow-[0_10px_35px_rgba(79,70,229,0.3)] flex items-center gap-3">
-    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-emerald-500 text-white flex items-center justify-center shadow-md">
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-in-out bg-slate-900 border border-indigo-500/50 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+    <div class="w-7 h-7 rounded-lg bg-indigo-600/20 text-indigo-400 flex items-center justify-center shrink-0">
       <i data-lucide="check" class="w-4 h-4"></i>
     </div>
     <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
   </div>
 
   <!-- Navigation Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-xl border-b border-slate-800/80 transition-all duration-300" id="main-header">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80" id="main-header">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <!-- Unique Brand Logo with Glowing Gradient Ring & Status Pulse -->
-      <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-3 group shrink-0">
-        <div class="relative p-[1.5px] rounded-xl bg-gradient-to-tr from-indigo-500 via-sky-400 to-emerald-400 shadow-md shadow-indigo-500/20 group-hover:shadow-indigo-500/50 group-hover:scale-105 transition-all duration-300">
-          <div class="w-8 h-8 rounded-[10px] bg-slate-950 flex items-center justify-center text-white text-xs font-black tracking-wider">
-            <span class="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">VB</span>
-          </div>
-          <span class="absolute -top-1 -right-1 flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-slate-950"></span>
-          </span>
-        </div>
-        <span class="whitespace-nowrap font-extrabold text-lg tracking-tight">
-          Vennela <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Bandari</span><span class="text-indigo-400 animate-pulse">.</span>
-        </span>
+      <!-- Logo Branding -->
+      <a href="#" class="text-lg font-extrabold tracking-tight text-white flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs font-black shadow-md shadow-indigo-600/30">VB</span>
+        <span class="whitespace-nowrap">Vennela Bandari<span class="text-indigo-400">.</span></span>
       </a>
-      
-      <!-- Nav Links -->
+
+      <!-- Recruiter Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-indigo-400 transition-colors relative py-1 group/nav">
-          About
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover/nav:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#skills" class="hover:text-indigo-400 transition-colors relative py-1 group/nav">
-          Skills
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover/nav:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#experience" class="hover:text-indigo-400 transition-colors relative py-1 group/nav">
-          Experience
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover/nav:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#projects" class="hover:text-indigo-400 transition-colors relative py-1 group/nav">
-          Projects
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover/nav:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#education" class="hover:text-indigo-400 transition-colors relative py-1 group/nav">
-          Education
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover/nav:w-full transition-all duration-300"></span>
-        </a>
+        <a href="#summary" class="hover:text-indigo-400 transition-colors">Executive Summary</a>
+        <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-indigo-400 transition-colors">Case Studies</a>
+        <a href="#education" class="hover:text-indigo-400 transition-colors">Academics</a>
       </nav>
 
-      <!-- Special Header Actions -->
-      <div class="flex items-center gap-2.5">
-        <button onclick="toggleRecruiterModal()" class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/60 transition-all shadow-sm">
-          <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400 animate-pulse"></i>
-          <span>Executive Brief</span>
+      <!-- Header CTAs -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleRecruiterModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Recruiter Brief</span>
         </button>
 
-        <button onclick="copyEmail('bandari7266@gmail.com')" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-indigo-500/50 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)] transition-all" title="Copy Email">
-          <i data-lucide="copy" class="w-3.5 h-3.5 text-indigo-400"></i>
-          <span>Copy Mail</span>
-        </button>
-
-        <a href="mailto:bandari7266@gmail.com" class="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-500 hover:to-indigo-600 transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:scale-105 active:scale-95 flex items-center gap-1">
-          <span>Contact Me</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        <a href="mailto:bandari7266@gmail.com" class="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30 flex items-center gap-1">
+          <span>Contact Candidate</span>
         </a>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white" aria-label="Toggle Mobile Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Nav Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-4 space-y-3 backdrop-blur-lg">
-      <a href="#about" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors py-1">About</a>
-      <a href="#skills" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors py-1">Skills</a>
-      <a href="#experience" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors py-1">Experience</a>
-      <a href="#projects" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors py-1">Projects</a>
-      <a href="#education" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors py-1">Education</a>
-      <button onclick="toggleRecruiterModal()" class="w-full text-left text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors py-1 flex items-center gap-2">
-        <i data-lucide="zap" class="w-4 h-4"></i> Executive Brief / Recruiter Summary
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 px-6 py-4 space-y-3">
+      <a href="#summary" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 py-1">Executive Summary</a>
+      <a href="#skills" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 py-1">Skills</a>
+      <a href="#experience" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 py-1">Experience</a>
+      <a href="#projects" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 py-1">Case Studies</a>
+      <a href="#education" class="block text-sm font-medium text-slate-300 hover:text-indigo-400 py-1">Academics</a>
+      <button onclick="toggleRecruiterModal()" class="w-full text-left text-sm font-medium text-emerald-400 hover:text-emerald-300 py-1 flex items-center gap-2">
+        <i data-lucide="file-text" class="w-4 h-4"></i> View Recruiter Briefing
       </button>
     </div>
   </header>
 
-  <main class="pt-24 relative z-10">
-    <!-- Hero Section -->
-    <section id="about" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Ready for Data Analyst & AI Engineering Roles
-        </div>
-        
-        <!-- Big Name Headline -->
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight whitespace-nowrap">
-          Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Vennela Bandari.</span>
-        </h1>
-        
-        <!-- Sub-headline Tagline -->
-        <p class="mt-4 text-xl sm:text-2xl font-semibold text-slate-200">
-          Transforming Data into Actionable Intelligence & AI Solutions.
-        </p>
-
-        <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-          A Computer Science graduate specializing in AI Full Stack development, interactive dashboard creation, and automated data pipelines to power data-driven business decisions.
-        </p>
-
-        <!-- Quick Contacts with Copy Trigger -->
-        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-400">
-          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i> Hyderabad, India</span>
-          <button onclick="copyEmail('bandari7266@gmail.com')" class="flex items-center gap-1.5 text-indigo-300 hover:text-white bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md transition-all">
-            <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i> bandari7266@gmail.com <i data-lucide="copy" class="w-3 h-3 text-slate-500"></i>
-          </button>
-          <a href="https://linkedin.com/in/vennelabandari" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-indigo-400 hover:underline"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
-          <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-indigo-400 hover:underline"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
-        </div>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#projects" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2 transform hover:-translate-y-0.5">
-            Explore Work <i data-lucide="arrow-down" class="w-4 h-4"></i>
-          </a>
-          <button onclick="toggleRecruiterModal()" class="px-6 py-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-indigo-500 text-slate-200 font-medium text-sm transition-all flex items-center gap-2 hover:bg-slate-800">
-            <i data-lucide="file-text" class="w-4 h-4 text-indigo-400"></i> View Executive Summary
-          </button>
-        </div>
+  <main class="pt-24">
+    <!-- Hero / Recruiter Headline Section -->
+    <section id="summary" class="max-w-6xl mx-auto px-6 py-12 md:py-20">
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Available Immediately • Open for Data Analyst & AI Developer Roles
       </div>
 
-      <!-- Live Counters Bento Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16">
-        <div class="p-6 rounded-xl glass-card transition-all group hover:-translate-y-1">
-          <div class="flex justify-between items-start">
-            <p class="text-3xl font-extrabold text-indigo-400"><span class="counter" data-target="10000" data-suffix="+">0</span>+</p>
-            <span class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400"><i data-lucide="database" class="w-5 h-5"></i></span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Headline & Bio -->
+        <div class="lg:col-span-8">
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight whitespace-nowrap">
+            Hi, I'm <span class="text-indigo-400">Vennela Bandari.</span>
+          </h1>
+
+          <p class="mt-4 text-xl sm:text-2xl font-bold text-slate-200">
+            Data Analyst & AI Full Stack Developer
+          </p>
+
+          <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            Computer Science graduate specializing in business intelligence analytics, relational SQL query engineering, interactive Power BI/Tableau dashboard design, and AI/LLM integration.
+          </p>
+
+          <!-- Quick Contact Links -->
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i> Hyderabad, India</span>
+            <button onclick="copyEmail('bandari7266@gmail.com')" class="flex items-center gap-1.5 text-indigo-300 hover:text-white bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg transition-all text-xs font-mono">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i> bandari7266@gmail.com <i data-lucide="copy" class="w-3 h-3 text-slate-500"></i>
+            </button>
+            <a href="https://linkedin.com/in/vennelabandari" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-indigo-400 hover:underline"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
+            <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-indigo-400 hover:underline"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
           </div>
-          <p class="text-sm font-medium text-slate-300 mt-2">Data Rows Analyzed</p>
-          <p class="text-xs text-slate-500 mt-1">Across end-to-end BI pipelines</p>
-        </div>
-        
-        <div class="p-6 rounded-xl glass-card transition-all group hover:-translate-y-1">
-          <div class="flex justify-between items-start">
-            <p class="text-3xl font-extrabold text-sky-400"><span class="counter" data-target="30" data-suffix="%">0</span>%</p>
-            <span class="p-2 rounded-lg bg-sky-500/10 text-sky-400"><i data-lucide="zap" class="w-5 h-5"></i></span>
+
+          <!-- Primary Actions -->
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#projects" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-md shadow-indigo-600/30 flex items-center gap-2">
+              Review Case Studies <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <button onclick="toggleRecruiterModal()" class="px-6 py-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-indigo-500 text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i> Executive Briefing for Recruiters
+            </button>
           </div>
-          <p class="text-sm font-medium text-slate-300 mt-2">ETL Efficiency Boost</p>
-          <p class="text-xs text-slate-500 mt-1">Achieved with automated AI scripts</p>
         </div>
 
-        <div class="p-6 rounded-xl glass-card transition-all group hover:-translate-y-1">
-          <div class="flex justify-between items-start">
-            <p class="text-3xl font-extrabold text-emerald-400"><span class="counter" data-target="92" data-suffix="%">0</span>%</p>
-            <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
+        <!-- Right Recruiter Quick Metrics Bento Card -->
+        <div class="lg:col-span-4 p-6 rounded-2xl recruiter-card space-y-4">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-indigo-400 font-bold border-b border-slate-800 pb-3 flex items-center justify-between">
+            <span>Verified Impact Snapshot</span>
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          </h2>
+
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-extrabold text-white">10,000+</p>
+                <p class="text-xs text-slate-400">Data Rows Processed & Analyzed</p>
+              </div>
+              <span class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400"><i data-lucide="database" class="w-5 h-5"></i></span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-extrabold text-sky-400">30%</p>
+                <p class="text-xs text-slate-400">ETL Pipeline Overhead Reduction</p>
+              </div>
+              <span class="p-2 rounded-lg bg-sky-500/10 text-sky-400"><i data-lucide="zap" class="w-5 h-5"></i></span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-extrabold text-emerald-400">92%</p>
+                <p class="text-xs text-slate-400">AI Prompt Accuracy Achieved</p>
+              </div>
+              <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
+            </div>
           </div>
-          <p class="text-sm font-medium text-slate-300 mt-2">AI Output Accuracy</p>
-          <p class="text-xs text-slate-500 mt-1">Delivered on EDUPLUSE.AI platform</p>
+
+          <div class="pt-2 text-xs text-slate-400 flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+            <span>BS CS Graduate • Available for Immediate Onboarding</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Technical Skills Section -->
-    <section id="skills" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800/80">
-      <div class="mb-10">
-        <p class="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Capabilities</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Technical Stack & Core Skills</h2>
+    <!-- Technical Stack & Skill Matrix Section -->
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/80">
+      <div class="mb-8">
+        <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">Candidate Competencies</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Technical Stack & Proficiency Matrix</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Programming & Full Stack -->
-        <div class="p-6 rounded-xl glass-card transition-all hover:-translate-y-1">
-          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+        <!-- Programming & Core -->
+        <div class="p-6 rounded-2xl recruiter-card">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
             <i data-lucide="code-2" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-semibold text-white mb-3">Programming & Full Stack</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-indigo-500/50 transition-colors">Python</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-indigo-500/50 transition-colors">AI Full Stack</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-indigo-500/50 transition-colors">MySQL</span>
-          </div>
+          <h3 class="font-bold text-white text-base mb-3">Languages & Backend</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Python</span> <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-mono">Advanced</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">MySQL / SQL</span> <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-mono">15+ Queries</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">AI Full Stack</span> <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-mono">Core</span></li>
+          </ul>
         </div>
 
         <!-- Data & Analytics -->
-        <div class="p-6 rounded-xl glass-card transition-all hover:-translate-y-1">
-          <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+        <div class="p-6 rounded-2xl recruiter-card">
+          <div class="w-9 h-9 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
             <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-semibold text-white mb-3">Data & Analytics</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">Power BI</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">Tableau</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">Excel</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">Pandas</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">NumPy</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-sky-500/50 transition-colors">Matplotlib</span>
-          </div>
+          <h3 class="font-bold text-white text-base mb-3">Data Analytics & BI</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Power BI</span> <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 text-[10px] font-mono">4 Dashboards</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Tableau</span> <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 text-[10px] font-mono">Executive</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Pandas & NumPy</span> <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 text-[10px] font-mono">EDA</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Excel Advanced</span> <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 text-[10px] font-mono">Pivots & Formulas</span></li>
+          </ul>
         </div>
 
-        <!-- AI & Modern Tools -->
-        <div class="p-6 rounded-xl glass-card transition-all hover:-translate-y-1">
-          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+        <!-- AI & Prompt Engineering -->
+        <div class="p-6 rounded-2xl recruiter-card">
+          <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
             <i data-lucide="bot" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-semibold text-white mb-3">AI & Developer Tools</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-emerald-500/50 transition-colors">LLM Integration</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-emerald-500/50 transition-colors">Prompt Engineering</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-emerald-500/50 transition-colors">Agentic Integration</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-emerald-500/50 transition-colors">Jupyter</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-emerald-500/50 transition-colors">Git & GitHub</span>
-          </div>
+          <h3 class="font-bold text-white text-base mb-3">AI & Developer Tools</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Prompt Engineering</span> <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">92% Acc</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">LLM Integration</span> <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">API Workflows</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Jupyter & Anaconda</span> <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">Notebooks</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Git & GitHub</span> <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">Version Control</span></li>
+          </ul>
         </div>
 
         <!-- Core Competencies -->
-        <div class="p-6 rounded-xl glass-card transition-all hover:-translate-y-1">
-          <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+        <div class="p-6 rounded-2xl recruiter-card">
+          <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
             <i data-lucide="database" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-semibold text-white mb-3">Core Competencies</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-purple-500/50 transition-colors">EDA</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-purple-500/50 transition-colors">Data Cleaning</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-purple-500/50 transition-colors">BI Dashboards</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:border-purple-500/50 transition-colors">Relational DBs</span>
-          </div>
+          <h3 class="font-bold text-white text-base mb-3">Core Methodologies</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Exploratory Data Analysis</span> <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-mono">EDA</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Data Preprocessing</span> <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-mono">Cleaning</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Relational DB Design</span> <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-mono">Queries</span></li>
+            <li class="flex items-center justify-between"><span class="font-medium text-slate-200">Executive Reporting</span> <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[10px] font-mono">KPIs</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Professional Experience Section -->
-    <section id="experience" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800/80">
-      <div class="mb-10">
-        <p class="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Work History</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Professional Experience</h2>
+    <section id="experience" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/80">
+      <div class="mb-8">
+        <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">Work History</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Professional Internship Experience</h2>
       </div>
 
-      <div class="p-6 md:p-8 rounded-2xl glass-card relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-bl-full pointer-events-none"></div>
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
+      <div class="p-6 md:p-8 rounded-2xl recruiter-card relative">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800 pb-4">
           <div>
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              Data Analytics & AI Full Stack Intern
-            </h3>
-            <p class="text-sm font-medium text-indigo-400 mt-0.5">Vangore Tech Private Limited • Hyderabad, India</p>
+            <h3 class="text-xl font-extrabold text-white">Data Analytics & AI Full Stack Intern</h3>
+            <p class="text-sm font-semibold text-indigo-400 mt-0.5">Vangore Tech Private Limited • Hyderabad, India</p>
           </div>
-          <span class="text-xs px-3 py-1 rounded-full bg-slate-800/90 text-indigo-300 border border-indigo-500/20 w-fit font-mono">Jun 2026 – Sep 2026</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300 font-mono w-fit border border-indigo-500/20">Jun 2026 – Sep 2026</span>
         </div>
 
-        <ul class="mt-6 space-y-3.5 text-sm text-slate-300">
-          <li class="flex items-start gap-3">
-            <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-            <span>Analyzed <strong>10,000+ data rows</strong> across end-to-end business intelligence pipelines utilizing Python, Excel, MySQL, Power BI, and Tableau.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-            <span>Leveraged modern AI tools and prompt engineering workflows to automate reporting, improving data preprocessing efficiency by <strong>30%</strong>.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-            <span>Engineered <strong>15+ complex MySQL queries</strong> and constructed 4 interactive BI dashboards, improving query response speed by <strong>25%</strong>.</span>
-          </li>
-        </ul>
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Bullet points -->
+          <div class="lg:col-span-8 space-y-3.5 text-sm text-slate-300">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-1"></i>
+              <span>Processed and analyzed <strong>10,000+ data rows</strong> across end-to-end business intelligence pipelines utilizing Python, Excel, MySQL, Power BI, and Tableau.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-1"></i>
+              <span>Leveraged modern AI tools and prompt engineering workflows to automate reporting, improving data preprocessing efficiency by <strong>30%</strong>.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-1"></i>
+              <span>Engineered <strong>15+ complex MySQL queries</strong> and constructed 4 interactive BI dashboards, improving query response speed by <strong>25%</strong>.</span>
+            </div>
+          </div>
+
+          <!-- Highlight KPI card -->
+          <div class="lg:col-span-4 p-4 rounded-xl bg-slate-950/70 border border-slate-800 text-xs space-y-2">
+            <p class="font-mono text-indigo-400 font-semibold uppercase">Internship Metrics Delivered</p>
+            <div class="border-t border-slate-800/80 pt-2 space-y-1">
+              <p class="flex justify-between text-slate-300"><span>Rows Analyzed:</span> <strong class="text-white">10,000+</strong></p>
+              <p class="flex justify-between text-slate-300"><span>SQL Queries Built:</span> <strong class="text-white">15+ Advanced</strong></p>
+              <p class="flex justify-between text-slate-300"><span>Dashboards Built:</span> <strong class="text-white">4 Interactive</strong></p>
+              <p class="flex justify-between text-slate-300"><span>Query Acceleration:</span> <strong class="text-emerald-400">+25% Faster</strong></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800/80">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+    <!-- Featured Projects / Recruiter Case Studies -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
-          <p class="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Portfolio</p>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Featured Projects</h2>
+          <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">Recruiter Case Studies</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Featured Technical Projects</h2>
         </div>
-        
-        <!-- Project Filter Buttons -->
-        <div class="flex gap-2 p-1 bg-slate-900 rounded-lg border border-slate-800 text-xs">
-          <button onclick="filterProjects('all')" id="btn-filter-all" class="px-3 py-1.5 rounded-md font-medium bg-indigo-600 text-white transition-all">All</button>
-          <button onclick="filterProjects('analytics')" id="btn-filter-analytics" class="px-3 py-1.5 rounded-md font-medium text-slate-400 hover:text-white transition-all">Data Analytics</button>
-          <button onclick="filterProjects('ai')" id="btn-filter-ai" class="px-3 py-1.5 rounded-md font-medium text-slate-400 hover:text-white transition-all">AI & Full Stack</button>
+
+        <!-- Category Filters -->
+        <div class="flex gap-2 p-1 bg-slate-900 rounded-xl border border-slate-800 text-xs">
+          <button onclick="filterProjects('all')" id="btn-filter-all" class="px-3 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white transition-all">All</button>
+          <button onclick="filterProjects('analytics')" id="btn-filter-analytics" class="px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all">Data Analytics</button>
+          <button onclick="filterProjects('ai')" id="btn-filter-ai" class="px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all">AI & Full Stack</button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Project 1: HR Employee Attrition -->
-        <div class="project-card analytics p-6 md:p-8 rounded-2xl glass-card flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+        <!-- Project 1: HR Attrition Analysis -->
+        <div class="project-card analytics p-6 md:p-8 rounded-2xl recruiter-card flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-indigo-400 font-semibold uppercase tracking-wider bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Data Analytics • 2026</span>
+              <span class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-wider bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Data Analytics • Executive BI</span>
               <div class="flex items-center gap-2">
-                <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="p-1.5 text-slate-400 hover:text-white bg-slate-800/80 rounded-lg hover:bg-slate-700 transition-colors" title="View Source on GitHub">
+                <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="p-1.5 text-slate-400 hover:text-white bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors" title="GitHub Code">
                   <i data-lucide="github" class="w-4 h-4"></i>
                 </a>
-                <button onclick="openChartModal('hr')" class="p-1.5 text-indigo-400 hover:text-white bg-indigo-500/10 rounded-lg hover:bg-indigo-600 transition-colors flex items-center gap-1 text-xs px-2" title="Preview Interactive Analytics">
-                  <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> Live Demo
+                <button onclick="openChartModal('hr')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all">
+                  <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> Interactive Brief
                 </button>
               </div>
             </div>
-            
-            <h3 class="text-xl font-bold text-white mb-2 hover:text-indigo-400 transition-colors">
-              HR Employee Attrition Analysis & Dashboard
-            </h3>
-            
+
+            <h3 class="text-xl font-bold text-white mb-2">HR Employee Attrition Analysis & Executive Dashboard</h3>
             <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-              Comprehensive exploratory data analysis and executive reporting dashboard designed to identify turnover drivers and optimize workforce retention strategies.
+              Exploratory data analysis and executive Power BI reporting system built to pinpoint workforce turnover drivers and enable data-backed retention decisions.
             </p>
-            
-            <ul class="space-y-2 text-xs text-slate-400 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-indigo-400 font-bold">•</span> Analyzed 1,400+ HR records identifying a 16.1% attrition rate linked to overtime and tenure.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-indigo-400 font-bold">•</span> Designed an interactive 5-KPI Power BI dashboard cutting manual reporting time by 40%.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-indigo-400 font-bold">•</span> Automated ETL validation in Python to reduce preparation overhead by 30%.
-              </li>
-            </ul>
+
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs mb-4 space-y-2">
+              <p class="font-mono text-indigo-400 font-semibold">Key Achievements & Methodology:</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-400 font-bold">•</span> Processed 1,400+ HR records; uncovered a 16.1% attrition rate strongly linked to overtime work & tenure.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-400 font-bold">•</span> Built interactive 5-KPI Power BI dashboard reducing manual executive reporting duration by 40%.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-400 font-bold">•</span> Created automated Python ETL validation scripts cutting data prep overhead by 30%.
+                </li>
+              </ul>
+            </div>
           </div>
-          
-          <div class="flex flex-wrap gap-1.5 border-t border-slate-800/80 pt-4">
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Python</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Pandas</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Power BI</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">MySQL</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Excel</span>
+
+          <div class="flex flex-wrap gap-1.5 border-t border-slate-800 pt-4">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Python</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Pandas</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Power BI</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">MySQL</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Excel</span>
           </div>
         </div>
 
         <!-- Project 2: EDUPLUSE.AI -->
-        <div class="project-card ai p-6 md:p-8 rounded-2xl glass-card flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+        <div class="project-card ai p-6 md:p-8 rounded-2xl recruiter-card flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-emerald-400 font-semibold uppercase tracking-wider bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">AI & Full Stack • 2026</span>
+              <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">AI & Full Stack • 2026</span>
               <div class="flex items-center gap-2">
-                <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="p-1.5 text-slate-400 hover:text-white bg-slate-800/80 rounded-lg hover:bg-slate-700 transition-colors" title="View Source on GitHub">
+                <a href="https://github.com/BandariVennela" target="_blank" rel="noopener noreferrer" class="p-1.5 text-slate-400 hover:text-white bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors" title="GitHub Code">
                   <i data-lucide="github" class="w-4 h-4"></i>
                 </a>
-                <button onclick="openChartModal('edu')" class="p-1.5 text-emerald-400 hover:text-white bg-emerald-500/10 rounded-lg hover:bg-emerald-600 transition-colors flex items-center gap-1 text-xs px-2" title="Preview Interactive Analytics">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Live Demo
+                <button onclick="openChartModal('edu')" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Interactive Brief
                 </button>
               </div>
             </div>
-            
-            <h3 class="text-xl font-bold text-white mb-2 hover:text-emerald-400 transition-colors">
-              EDUPLUSE.AI — Student Engagement Platform
-            </h3>
-            
+
+            <h3 class="text-xl font-bold text-white mb-2">EDUPLUSE.AI — Student Engagement Platform</h3>
             <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-              An intelligent engagement platform leveraging Python and prompt engineering to deliver high-accuracy student support and real-time interaction logs.
+              Intelligent engagement platform combining Python, LLM prompt engineering, and relational database logging for automated student guidance.
             </p>
-            
-            <ul class="space-y-2 text-xs text-slate-400 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">•</span> Achieved 92% response accuracy via LLM prompt engineering, lifting engagement by 25%.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">•</span> Engineered MySQL backend handling 1,000+ daily logs with 35% faster query times.
-              </li>
-            </ul>
+
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs mb-4 space-y-2">
+              <p class="font-mono text-emerald-400 font-semibold">Key Achievements & Methodology:</p>
+              <ul class="space-y-1.5 text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">•</span> Reached 92% LLM response accuracy via systematic prompt engineering, increasing active engagement by 25%.
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">•</span> Engineered MySQL backend logging 1,000+ daily student interaction sessions with 35% faster response times.
+                </li>
+              </ul>
+            </div>
           </div>
-          
-          <div class="flex flex-wrap gap-1.5 border-t border-slate-800/80 pt-4">
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Python</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">AI Full Stack</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">Prompt Engineering</span>
-            <span class="px-2 py-0.5 text-xs rounded bg-slate-800/80 text-slate-300 border border-slate-700/50">MySQL</span>
+
+          <div class="flex flex-wrap gap-1.5 border-t border-slate-800 pt-4">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Python</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">AI Full Stack</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">Prompt Engineering</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300 border border-slate-700">MySQL</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education & Achievements Section -->
-    <section id="education" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800/80">
+    <!-- Education & Certifications -->
+    <section id="education" class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800/80">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Education -->
         <div>
-          <p class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-1">Academics</p>
-          <h2 class="text-2xl font-bold text-white mb-6">Education</h2>
-          
-          <div class="p-6 rounded-xl glass-card border border-slate-800 relative">
-            <span class="text-xs px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 font-medium font-mono">Aug 2023 – May 2026</span>
-            <h3 class="text-lg font-bold text-white mt-3">Bachelor of Science (Computer Science)</h3>
-            <p class="text-sm text-slate-300 mt-1">Kakatiya Mahila Degree College, Telangana</p>
-            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-xs text-slate-400">Academic Standing</span>
-              <p class="text-sm font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Cumulative GPA: 7.0 / 10.0</p>
+          <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider mb-1">Academics</p>
+          <h2 class="text-2xl font-bold text-white mb-6">Education Details</h2>
+
+          <div class="p-6 rounded-2xl recruiter-card space-y-3">
+            <span class="text-xs px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 font-mono font-semibold">Aug 2023 – May 2026</span>
+            <h3 class="text-lg font-bold text-white">Bachelor of Science (Computer Science)</h3>
+            <p class="text-sm text-slate-300">Kakatiya Mahila Degree College, Telangana</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Cumulative GPA:</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">7.0 / 10.0</span>
             </div>
           </div>
         </div>
 
         <!-- Certifications -->
         <div>
-          <p class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-1">Recognitions</p>
-          <h2 class="text-2xl font-bold text-white mb-6">Certifications</h2>
-          
-          <div class="space-y-4">
-            <div class="p-4 rounded-xl glass-card transition-all hover:border-slate-700 flex items-start gap-3">
+          <p class="text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider mb-1">Recognitions</p>
+          <h2 class="text-2xl font-bold text-white mb-6">Professional Certifications</h2>
+
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl recruiter-card flex items-start gap-3">
               <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 shrink-0">
                 <i data-lucide="award" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-sm text-white">AI Full Stack & Data Analytics Certification</h4>
+                <h4 class="font-bold text-sm text-white">AI Full Stack & Data Analytics Certification</h4>
                 <p class="text-xs text-slate-400 mt-0.5">Vangore Tech Private Limited • Python, MySQL, Power BI, Tableau</p>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl glass-card transition-all hover:border-slate-700 flex items-start gap-3">
+            <div class="p-4 rounded-xl recruiter-card flex items-start gap-3">
               <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400 shrink-0">
                 <i data-lucide="shield-check" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-sm text-white">Mahindra Pride Classroom Employability Programme</h4>
+                <h4 class="font-bold text-sm text-white">Mahindra Pride Classroom Employability Programme</h4>
                 <p class="text-xs text-slate-400 mt-0.5">Selected participant & program graduate</p>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl glass-card transition-all hover:border-slate-700 flex items-start gap-3">
+            <div class="p-4 rounded-xl recruiter-card flex items-start gap-3">
               <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
                 <i data-lucide="user-check" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-sm text-white">Soft Skills & Personality Development</h4>
+                <h4 class="font-bold text-sm text-white">Soft Skills & Personality Development</h4>
                 <p class="text-xs text-slate-400 mt-0.5">IT CURVE (2026)</p>
               </div>
             </div>
@@ -528,21 +490,18 @@
       </div>
     </section>
 
-    <!-- Footer & Contact -->
-    <footer class="border-t border-slate-800/80 bg-slate-950/90 py-12 relative">
+    <!-- Footer & Contact Bar -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-10">
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <a href="#" class="text-lg font-bold text-white flex items-center gap-2">
-            <span class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-white text-xs font-bold">VB</span>
-            <span>Vennela Bandari</span>
-          </a>
-          <p class="text-xs text-slate-400 mt-1">Data Analyst • AI Full Stack Developer</p>
+          <p class="text-base font-extrabold text-white">Vennela Bandari</p>
+          <p class="text-xs text-slate-400 mt-0.5">Data Analyst • AI Full Stack Developer • Hyderabad, India</p>
         </div>
 
-        <div class="flex items-center gap-6 text-sm text-slate-400">
-          <a href="mailto:bandari7266@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
+        <div class="flex items-center gap-6 text-xs text-slate-300">
+          <button onclick="copyEmail('bandari7266@gmail.com')" class="hover:text-white transition-colors flex items-center gap-1.5">
             <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i> bandari7266@gmail.com
-          </a>
+          </button>
           <a href="https://linkedin.com/in/vennelabandari" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
             <i data-lucide="linkedin" class="w-4 h-4 text-indigo-400"></i> LinkedIn
           </a>
@@ -551,127 +510,126 @@
           </a>
         </div>
 
-        <p class="text-xs text-slate-500">
-          &copy; 2026 Vennela Bandari. All rights reserved.
-        </p>
+        <p class="text-xs text-slate-500 font-mono">&copy; 2026 Vennela Bandari</p>
       </div>
     </footer>
   </main>
 
-  <!-- Interactive Project Analytics Modal -->
+  <!-- Interactive Project Analytics Case Study Modal -->
   <div id="chart-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl">
       <button onclick="closeChartModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
+      <!-- HR Attrition Case Study -->
       <div id="modal-content-hr" class="hidden">
         <div class="flex items-center gap-2 mb-2">
-          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-indigo-500/10 text-indigo-400 font-semibold border border-indigo-500/20">Data Analytics Interactive Preview</span>
+          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-indigo-500/10 text-indigo-400 font-semibold border border-indigo-500/20">Data Analytics Case Study</span>
         </div>
         <h3 class="text-xl font-bold text-white mb-1">HR Attrition Drivers Breakdown</h3>
-        <p class="text-xs text-slate-400 mb-6">Interactive dataset metric visualization (1,400+ Employee Records)</p>
+        <p class="text-xs text-slate-400 mb-6">Exploratory data insights (1,470 Employee Records Analyzed)</p>
 
         <div class="h-64 relative">
           <canvas id="hrChart"></canvas>
         </div>
-        
-        <div class="mt-4 grid grid-cols-3 gap-3 text-center border-t border-slate-800 pt-4">
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Total Analyzed</p>
-            <p class="text-sm font-bold text-white">1,470 Records</p>
+
+        <div class="mt-4 grid grid-cols-3 gap-3 text-center border-t border-slate-800 pt-4 text-xs">
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">Records Analyzed</p>
+            <p class="font-bold text-white">1,470 HR Logs</p>
           </div>
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Avg Attrition Rate</p>
-            <p class="text-sm font-bold text-rose-400">16.1%</p>
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">Avg Attrition</p>
+            <p class="font-bold text-rose-400">16.1% Rate</p>
           </div>
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Reporting Efficiency</p>
-            <p class="text-sm font-bold text-emerald-400">+40% Faster</p>
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">Reporting Gain</p>
+            <p class="font-bold text-emerald-400">40% Faster</p>
           </div>
         </div>
       </div>
 
+      <!-- EDUPLUSE.AI Case Study -->
       <div id="modal-content-edu" class="hidden">
         <div class="flex items-center gap-2 mb-2">
-          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">AI Engine Metrics Preview</span>
+          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">AI Engine Benchmarks</span>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">EDUPLUSE.AI Prompt Accuracy & Engagement</h3>
-        <p class="text-xs text-slate-400 mb-6">Real-time performance benchmarks across 1,000+ daily queries</p>
+        <h3 class="text-xl font-bold text-white mb-1">EDUPLUSE.AI Response Accuracy Curve</h3>
+        <p class="text-xs text-slate-400 mb-6">Performance trajectory across 1,000+ daily student logs</p>
 
         <div class="h-64 relative">
           <canvas id="eduChart"></canvas>
         </div>
 
-        <div class="mt-4 grid grid-cols-3 gap-3 text-center border-t border-slate-800 pt-4">
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Accuracy Rate</p>
-            <p class="text-sm font-bold text-emerald-400">92.4%</p>
+        <div class="mt-4 grid grid-cols-3 gap-3 text-center border-t border-slate-800 pt-4 text-xs">
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">Accuracy Rate</p>
+            <p class="font-bold text-emerald-400">92.4% Benchmark</p>
           </div>
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Daily Query Vol</p>
-            <p class="text-sm font-bold text-white">1,000+ Requests</p>
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">Daily Query Vol</p>
+            <p class="font-bold text-white">1,000+ Logs</p>
           </div>
-          <div class="p-2 rounded bg-slate-950/50">
-            <p class="text-xs text-slate-400">Query Speedup</p>
-            <p class="text-sm font-bold text-indigo-400">35% Faster</p>
+          <div class="p-2 rounded bg-slate-950">
+            <p class="text-slate-400">SQL Acceleration</p>
+            <p class="font-bold text-indigo-400">35% Speedup</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Recruiter Executive Summary Modal -->
+  <!-- Recruiter Executive Briefing Modal -->
   <div id="recruiter-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative shadow-2xl overflow-hidden">
-      <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full pointer-events-none"></div>
-      <button onclick="toggleRecruiterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative shadow-2xl">
+      <button onclick="toggleRecruiterModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="flex items-center gap-2 mb-3">
-        <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-indigo-500/10 text-indigo-400 font-semibold border border-indigo-500/20">Executive Brief</span>
-        <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">Active Candidate</span>
+        <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-indigo-500/10 text-indigo-400 font-semibold border border-indigo-500/20">Executive Briefing</span>
+        <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">Candidate Code: VB-2026</span>
       </div>
 
-      <h3 class="text-2xl font-bold text-white mb-1">Vennela Bandari — Profile Summary</h3>
+      <h3 class="text-2xl font-bold text-white mb-1">Vennela Bandari — Recruiter Summary</h3>
       <p class="text-xs text-indigo-400 font-medium mb-6">Data Analyst & AI Full Stack Developer • B.Sc. Computer Science Graduate (2026)</p>
 
       <div class="space-y-4 text-sm text-slate-300">
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Core Value Proposition</h4>
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono font-semibold text-slate-400 uppercase">Core Value Proposition</h4>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Bridging analytical rigor and AI automation. Experienced in processing <strong>10,000+ data rows</strong>, developing 4 interactive BI dashboards, optimizing SQL queries by <strong>25%</strong>, and building AI platforms with <strong>92% accuracy</strong>.
+            Proficient in translating complex business datasets into structured SQL models and interactive dashboards while automating ETL pipelines using Python and prompt engineering. Experienced with <strong>10,000+ data rows</strong>, 4 BI dashboards, and AI query response optimization.
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-          <div class="p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-            <span class="text-indigo-400 font-bold block mb-1">Primary Tech Stack</span>
-            <span class="text-slate-300">Python, MySQL, Power BI, Tableau, Excel, Pandas, LLMs, Prompt Engineering</span>
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800">
+            <span class="text-indigo-400 font-bold block mb-1">Technical Stack</span>
+            <span class="text-slate-300">Python, SQL, Power BI, Tableau, Excel, Pandas, NumPy, Prompt Engineering</span>
           </div>
-          <div class="p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-            <span class="text-emerald-400 font-bold block mb-1">Education & GPA</span>
-            <span class="text-slate-300">B.Sc. Computer Science (2023–2026)<br>CGPA: 7.0/10.0 • Kakatiya Mahila Degree College</span>
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800">
+            <span class="text-emerald-400 font-bold block mb-1">Academic Record</span>
+            <span class="text-slate-300">B.Sc. Computer Science (2023–2026)<br>Cumulative GPA: 7.0 / 10.0 • Kakatiya Mahila Degree College</span>
           </div>
         </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Professional Experience Highlights</h4>
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+          <h4 class="text-xs font-mono font-semibold text-slate-400 uppercase mb-2">Verified Experience Highlights</h4>
           <ul class="space-y-1.5 text-xs text-slate-300">
-            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Data Analytics & AI Full Stack Intern — Vangore Tech (Jun-Sep 2026)</li>
-            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Reduced ETL preparation overhead by 30% via Python automation scripts</li>
-            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Built Executive HR Attrition & EDUPLUSE.AI Student Engagement platforms</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Data Analytics & AI Full Stack Intern @ Vangore Tech (Jun - Sep 2026)</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Reduced ETL preparation overhead by 30% via automated Python workflows</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">•</span> Built HR Attrition Analysis (1.4k+ records) & EDUPLUSE.AI Platform (92% prompt acc)</li>
           </ul>
         </div>
       </div>
 
       <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-4">
-        <a href="mailto:bandari7266@gmail.com" class="px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs transition-all shadow-md shadow-indigo-600/30 flex items-center gap-2">
-          <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+        <a href="mailto:bandari7266@gmail.com" class="px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all shadow-md shadow-indigo-600/30 flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contact Candidate via Email
         </a>
-        <button onclick="copyEmail('bandari7266@gmail.com')" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition-all flex items-center gap-1.5">
-          <i data-lucide="copy" class="w-3.5 h-3.5 text-indigo-400"></i> Copy Contact Mail
+        <button onclick="copyEmail('bandari7266@gmail.com')" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all flex items-center gap-1.5">
+          <i data-lucide="copy" class="w-3.5 h-3.5 text-indigo-400"></i> Copy Email Address
         </button>
       </div>
     </div>
@@ -690,14 +648,14 @@
       });
     }
 
-    // Toggle Recruiter Modal
+    // Toggle Recruiter Briefing Modal
     function toggleRecruiterModal() {
       const modal = document.getElementById('recruiter-modal');
       modal.classList.toggle('hidden');
       modal.classList.toggle('flex');
     }
 
-    // Copy Email Function with Toast
+    // Copy Email Functionality
     function copyEmail(email) {
       const targetEmail = email || 'bandari7266@gmail.com';
       navigator.clipboard.writeText(targetEmail).then(() => {
@@ -714,66 +672,34 @@
       });
     }
 
-    // Project Filtering
+    // Project Category Filtering
     function filterProjects(category) {
       const cards = document.querySelectorAll('.project-card');
       const btnAll = document.getElementById('btn-filter-all');
       const btnAnalytics = document.getElementById('btn-filter-analytics');
       const btnAi = document.getElementById('btn-filter-ai');
 
-      // Reset button styles
       [btnAll, btnAnalytics, btnAi].forEach(btn => {
-        if (btn) btn.className = "px-3 py-1.5 rounded-md font-medium text-slate-400 hover:text-white transition-all";
+        if (btn) btn.className = "px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all";
       });
 
       if (category === 'all') {
-        if (btnAll) btnAll.className = "px-3 py-1.5 rounded-md font-medium bg-indigo-600 text-white transition-all";
+        if (btnAll) btnAll.className = "px-3 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white transition-all";
         cards.forEach(card => card.style.display = 'flex');
       } else if (category === 'analytics') {
-        if (btnAnalytics) btnAnalytics.className = "px-3 py-1.5 rounded-md font-medium bg-indigo-600 text-white transition-all";
+        if (btnAnalytics) btnAnalytics.className = "px-3 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white transition-all";
         cards.forEach(card => {
           card.style.display = card.classList.contains('analytics') ? 'flex' : 'none';
         });
       } else if (category === 'ai') {
-        if (btnAi) btnAi.className = "px-3 py-1.5 rounded-md font-medium bg-indigo-600 text-white transition-all";
+        if (btnAi) btnAi.className = "px-3 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white transition-all";
         cards.forEach(card => {
           card.style.display = card.classList.contains('ai') ? 'flex' : 'none';
         });
       }
     }
 
-    // Animated Counters
-    let animated = false;
-    function runCounters() {
-      const counterStats = document.querySelectorAll('.counter, .counter-stat');
-      if (!counterStats.length) return;
-      const rect = counterStats[0].getBoundingClientRect();
-      if (rect.top < window.innerHeight + 100 && !animated) {
-        animated = true;
-        counterStats.forEach(stat => {
-          const target = parseInt(stat.getAttribute('data-target'));
-          const suffix = stat.getAttribute('data-suffix') || '';
-          let count = 0;
-          const speed = Math.max(1, target / 40);
-          const updateCount = () => {
-            count += speed;
-            if (count < target) {
-              stat.innerText = (target >= 1000 ? Math.ceil(count / 1000) + 'k' : Math.ceil(count));
-              setTimeout(updateCount, 30);
-            } else {
-              stat.innerText = (target >= 1000 ? (target / 1000) + 'k' : target);
-            }
-          };
-          updateCount();
-        });
-      }
-    }
-
-    window.addEventListener('scroll', runCounters);
-    window.addEventListener('load', runCounters);
-    setTimeout(runCounters, 300);
-
-    // Interactive Charts Instances
+    // Chart.js Case Study Visualizers
     let hrChartInstance = null;
     let eduChartInstance = null;
 
@@ -808,16 +734,16 @@
       hrChartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Overtime Work', 'Low Tenure (<2 yrs)', 'Work-Life Balance', 'Commute Distance', 'Salary Band'],
+          labels: ['Overtime Hours', 'Low Tenure (<2 yrs)', 'Work-Life Balance', 'Commute Distance', 'Salary Band'],
           datasets: [{
             label: 'Attrition Impact Score (%)',
             data: [34, 28, 18, 12, 8],
             backgroundColor: [
-              'rgba(244, 63, 94, 0.8)',
-              'rgba(99, 102, 241, 0.8)',
-              'rgba(56, 189, 248, 0.8)',
-              'rgba(168, 85, 247, 0.8)',
-              'rgba(16, 185, 129, 0.8)'
+              'rgba(244, 63, 94, 0.85)',
+              'rgba(99, 102, 241, 0.85)',
+              'rgba(56, 189, 248, 0.85)',
+              'rgba(168, 85, 247, 0.85)',
+              'rgba(16, 185, 129, 0.85)'
             ],
             borderRadius: 6
           }]
@@ -825,12 +751,10 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false }
-          },
+          plugins: { legend: { display: false } },
           scales: {
             x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { display: false } },
-            y: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#334155' } }
+            y: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#1e293b' } }
           }
         }
       });
@@ -845,11 +769,11 @@
           labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
           datasets: [
             {
-              label: 'Response Accuracy (%)',
+              label: 'LLM Response Accuracy (%)',
               data: [78, 83, 87, 90, 91, 92.4],
               borderColor: '#10b981',
               backgroundColor: 'rgba(16, 185, 129, 0.1)',
-              tension: 0.4,
+              tension: 0.3,
               fill: true
             },
             {
@@ -857,7 +781,7 @@
               data: [60, 68, 74, 80, 84, 88],
               borderColor: '#6366f1',
               backgroundColor: 'rgba(99, 102, 241, 0.1)',
-              tension: 0.4,
+              tension: 0.3,
               fill: true
             }
           ]
@@ -865,26 +789,14 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { labels: { color: '#cbd5e1', font: { size: 11 } } }
-          },
+          plugins: { legend: { labels: { color: '#cbd5e1', font: { size: 11 } } } },
           scales: {
             x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { display: false } },
-            y: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#334155' } }
+            y: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#1e293b' } }
           }
         }
       });
     }
-
-    // Header background change on scroll
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('main-header');
-      if (window.scrollY > 20) {
-        header.classList.add('shadow-xl', 'bg-slate-950/95');
-      } else {
-        header.classList.remove('shadow-xl', 'bg-slate-950/95');
-      }
-    });
   </script>
 </body>
 </html>
