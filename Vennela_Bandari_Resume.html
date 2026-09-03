@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vennela Bandari - Resume</title>
+  
+  <!-- Tailwind CSS CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+    }
+    @media print {
+      body { background: white; color: black; }
+      .no-print { display: none !important; }
+      .page-container { border: none !important; shadow: none !important; padding: 0 !important; }
+    }
+  </style>
+</head>
+<body class="py-8 px-4 sm:px-6">
+
+  <!-- Printable Controls Bar -->
+  <div class="max-w-4xl mx-auto mb-6 no-print flex items-center justify-between bg-slate-900 text-white p-4 rounded-xl shadow-lg">
+    <div>
+      <h1 class="text-base font-bold">Vennela Bandari — Official Resume</h1>
+      <p class="text-xs text-slate-400">Data Analyst & AI Full Stack Developer</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <button onclick="window.print()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-lg transition-all shadow flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H7a2 2 0 00-2 2v4h10z"></path></svg>
+        Download / Print PDF
+      </button>
+      <a href="index.html" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs rounded-lg transition-all">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <!-- Printable Resume Page Container -->
+  <main class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-200 page-container space-y-6">
+
+    <!-- Header / Contact Info -->
+    <header class="text-center border-b border-slate-300 pb-6 space-y-2">
+      <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight uppercase">VENNELA BANDARI</h1>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-700 font-medium">
+        <span>HYDERABAD</span>
+        <span>•</span>
+        <a href="tel:+919989460100" class="text-indigo-600 hover:underline">+91 9989460100</a>
+        <span>•</span>
+        <a href="mailto:bandari7266@gmail.com" class="text-indigo-600 hover:underline">bandari7266@gmail.com</a>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-600 font-mono pt-1">
+        <a href="https://linkedin.com/in/vennelabandari" target="_blank" class="text-indigo-600 hover:underline">linkedin.com/in/vennelabandari</a>
+        <span>•</span>
+        <a href="https://github.com/BandariVennela" target="_blank" class="text-indigo-600 hover:underline">github.com/BandariVennela</a>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-2">Professional Summary</h2>
+      <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+        Detail-oriented graduate in Computer Science seeking an entry-level Data Analyst role. Proficient in AI Full Stack development with Python and modern AI tools. Hands-on experience in building interactive dashboard design, dedicated to leveraging AI and data analytics to drive business decisions.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-3">Technical Skills</h2>
+      <div class="space-y-1.5 text-xs sm:text-sm text-slate-800">
+        <p><strong>Programming & Full Stack:</strong> Python, AI Full Stack Development, MySQL</p>
+        <p><strong>Data & Analytics Tools:</strong> Microsoft Excel, Power BI, Tableau, Pandas, NumPy, Matplotlib</p>
+        <p><strong>AI & Software Tools:</strong> Use of LLMs, Prompt Engineering, Agentic Integration, Jupyter Notebook, Git, GitHub</p>
+        <p><strong>Core Competencies:</strong> Exploratory Data Analysis (EDA), Relational Databases, Data Cleaning, Data Visualization, Business Intelligence</p>
+      </div>
+    </section>
+
+    <!-- Experience - Internship -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-3">Experience – Internship</h2>
+      <div class="space-y-3">
+        <div>
+          <div class="flex justify-between items-baseline font-bold text-slate-900 text-xs sm:text-sm">
+            <span>Data Analytics & AI Full Stack Intern</span>
+            <span>Jun 2026 – Present</span>
+          </div>
+          <div class="flex justify-between items-baseline text-xs text-indigo-700 font-semibold mb-2">
+            <span>Vangore Tech Private Limited</span>
+            <span>Hyderabad, India</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700">
+            <li>Completed an intensive internship in AI Full Stack with Python, Microsoft Excel, MySQL, Power BI, and Tableau, analyzing <strong>10,000+ data rows</strong> across end-to-end business intelligence pipelines.</li>
+            <li>Utilized modern AI tools and prompt engineering techniques to automate reporting workflows, accelerating data preprocessing efficiency by <strong>30%</strong>.</li>
+            <li>Engineered <strong>15+ complex database queries</strong> in MySQL and constructed 4 interactive dashboards in Power BI and Tableau, improving query response speed by <strong>25%</strong> to support executive decision-making.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-3">Projects</h2>
+      <div class="space-y-4">
+        <!-- Project 1 -->
+        <div>
+          <div class="flex justify-between items-baseline font-bold text-slate-900 text-xs sm:text-sm">
+            <span>HR Employee Attrition Analysis & Dashboard</span>
+            <span>2026</span>
+          </div>
+          <p class="text-xs text-indigo-700 italic mb-1.5">Data Analytics Project • Python, Pandas, Power BI, MySQL, Excel</p>
+          <ul class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700">
+            <li>Analyzed <strong>1,400+ HR workforce records</strong> using Python (Pandas) and MySQL, identifying a <strong>16.1% overall attrition rate</strong> and key turnover drivers like overtime and tenure.</li>
+            <li>Designed an interactive Power BI dashboard tracking 5 key HR KPIs, projecting a <strong>15% reduction in attrition</strong> and cutting manual reporting time by <strong>40%</strong>.</li>
+            <li>Automated data validation and ETL pipeline scripts in Python, reducing data preparation overhead by <strong>30%</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div>
+          <div class="flex justify-between items-baseline font-bold text-slate-900 text-xs sm:text-sm">
+            <span>EDUPLUSE.AI – AI-Driven Student Engagement Platform</span>
+            <span>2026</span>
+          </div>
+          <p class="text-xs text-indigo-700 italic mb-1.5">AI & Analytics Project • Python, AI Full Stack, Prompt Engineering, MySQL</p>
+          <ul class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700">
+            <li>Developed an AI-driven student engagement platform integrating Python and LLM prompt engineering, achieving <strong>92% response accuracy</strong> and boosting student participation by <strong>25%</strong>.</li>
+            <li>Engineered backend data workflows in MySQL to process <strong>1,000+ daily activity logs</strong>, reducing real-time analytics query response time by <strong>35%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-3">Education</h2>
+      <div>
+        <div class="flex justify-between items-baseline font-bold text-slate-900 text-xs sm:text-sm">
+          <span>Bachelor of Science (Computer Science) – CGPA: 7.0/10.0</span>
+          <span>Aug 2023 – May 2026</span>
+        </div>
+        <div class="flex justify-between items-baseline text-xs text-slate-700">
+          <span>Kakatiya Mahila Degree College</span>
+          <span>Telangana, India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider border-b-2 border-slate-900 pb-1 mb-3">Achievements</h2>
+      <ul class="list-disc list-outside ml-4 space-y-1.5 text-xs text-slate-700">
+        <li><strong>Technical Certification:</strong> Successfully completed comprehensive training in AI Full Stack with Python, Data Analytics, MySQL, Power BI, and Tableau at Vangore Tech Private Limited.</li>
+        <li><strong>Program Selection:</strong> Selected for and completed the competitive Mahindra Pride Classroom Employability Programme.</li>
+        <li><strong>Soft Skills Certification:</strong> Earned Certificate of Completion in Soft Skills and Personality Development Program at IT CURVE (2026).</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
